@@ -1,0 +1,4 @@
+name,genre,publisher,developer,platform,price,releaseDate,rating
+halo,shooter,microsoft,microsoft,pc,40,03.01.2002,7
+call of duty,shooter,ea,infintyward,pc,60,15.05.2001,5
+little nightmers,adventure,sdf,fd,xbox,45,23.06.2019,8
