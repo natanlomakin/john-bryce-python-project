@@ -14,7 +14,7 @@ while menu == '1' or menu == '2':
         games_list = game_functions.open_file(games_file_name)
         games_menu_options = input("""to sort the games list enter 'sort'
 to see the most popular genre enter 'popular'
-to see the highest rating games enter 'rating'""")
+to see the highest rating games enter 'rating'\n""")
         if games_menu_options == 'sort':
             sort_choice = input("""select by what to sort the list:
                     1.name
@@ -39,9 +39,9 @@ to see the highest rating games enter 'rating'""")
     if menu == '2':
         users_file_name = input('enter the name of the users file you want to open: ')
         users_list = user_functions.file(users_file_name)
-        add_create = input("""to add a game to an existing file enter "add" 
-to create a new library enter create:\n""")
-        if add_create == 'create':
+        add_create_new = input("""to add a game to an existing user library enter "add", 
+to create a new library for an existing user enter "create" or to add a new user to the data base enter "new user":\n""")
+        if add_create_new == 'create':
             user_name = input('enter the users name you would like to create a library for: ')
             user_id = input('enter the users id: ')
             game_name_list = []
@@ -50,7 +50,7 @@ to create a new library enter create:\n""")
                 game_name_list.append(input('enter the game name you want to add: '))
             game_name_list.remove('done')
             user_functions.generate_file_by_user(users_list ,user_name ,user_id, game_name_list)
-        elif add_create == 'add':
+        elif add_create_new == 'add':
             user_name = input('enter the users name you would like to add the games to: ')
             game_name_list = []
             game_name_list.append(input('enter the game name you want to add(enter done when finished): '))
@@ -58,6 +58,10 @@ to create a new library enter create:\n""")
                 game_name_list.append(input('enter the game name you want to add: '))
             game_name_list.remove('done')
             user_functions.add_game_to_existing_file(user_name,game_name_list)
+        elif add_create_new == 'new user':
+            new_user_name_to_add = input('enter the users first and last name: ')
+            new_user_id_to_add = input('enter the users id: ')
+            user_functions.add_new_user_to_users_DB(users_file_name, new_user_name_to_add, new_user_id_to_add)
         else:
             print('error enter a valid action')
 
