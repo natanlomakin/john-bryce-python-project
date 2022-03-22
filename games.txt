@@ -1,4 +1,9 @@
 name,genre,publisher,developer,platform,price,releaseDate,rating
-halo,shooter,microsoft,microsoft,pc,40,03.01.2002,7
-call of duty,shooter,ea,infintyward,pc,60,15.05.2001,5
-little nightmers,adventure,sdf,fd,xbox,45,23.06.2019,8
+halo infinite,fps,xbox game studios,343 industries,xbox,77,08.12.2021,6
+call of duty:ww2,fps,activision,sledgehammer games,pc,65,03.11.2017,5
+little nightmares,adventure,bandai namco,tarsier studios,ps,22,28.04.2014,8
+squad,milsim,offworld industries,offworld industries,pc,60,23.09.2020,10
+gta5,open world,rockstar games,rockstar north,pc,46,14.04.2015,9
+dying light 2,open world,techland,techland,pc,77,04.02.2022,7
+battlefield 2042,fps,electronic arts,dice,pc,77,19.11.2021,1
+elden ring,rpg,bandai namco,fromsoftware inc,pc,70,25.02.2022,10

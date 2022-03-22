@@ -19,7 +19,7 @@ def file(file_name):
     users_file.close()
     return users_info_list
 
-def generate_file_by_user(list ,user_name ,user_id ,game_name):
+def generate_file_by_user(users_list ,user_name ,user_id ,game_name_list):
     """
     this function gets a list of existing users, a user name and id
     to create a new library for the given user name and id and adds
@@ -27,32 +27,35 @@ def generate_file_by_user(list ,user_name ,user_id ,game_name):
     the function checks if there is an existing library for the given
     user name, if it already exists an error message will be printed
     if it doesnt exist a new user library file will be created.
-    :param list: list of existing users
+    :param users_list: list of existing users
     :param user_name: user name to create a library file for
     :param user_id: user id to create a library file for
-    :param game_name: list of games to add to the users library file
+    :param game_name_list: list of games to add to the users library file
     :return: create a new user library file if not existing or
              print an error message if exists
     """
 
     destination = f'C:\\Users\\Natan\\PycharmProjects\\private_project\\user_librarys\\{user_name}.txt'
-    try:
-        if os.path.exists(destination):
-            print('this user already has library')
+    user_exist = False
+    if os.path.exists(destination):
+        print('this user already has library')
+    else:
+        for i in range(len(users_list)):
+            if users_list[i].get_user_name() == user_name:
+                user_exist = True
+        if user_exist:
+            file1 = open(f'{user_name}.txt', 'w')
+            file1.write(f'{user_name}')
+            file1.write(',')
+            file1.write(f'{user_id}\n')
+            for i in game_name_list:
+                file1.write(f'{i}\n')
+            file1.close()
         else:
-            for i in range(len(list)):
-                if list[i].get_user_name() == user_name:
-                    file1 = open(f'{user_name}.txt', 'w')
-                    file1.write(f'{user_name}')
-                    file1.write(',')
-                    file1.write(f'{user_id}\n')
-                    for i in game_name:
-                        file1.write(f'{i}\n')
-                    file1.close()
-                else:
-                    print('the user name given is not in the users file\nplease add the user to the users file first')
-    except FileNotFoundError:
-        print(f'{user_name}.txt does not exist')
+            print('the user name given is not in the users file\nplease add the user to the users file first')
+#                else:
+#                    print('the user name given is not in the users file\nplease add the user to the users file first')
+
 
 
 def add_game_to_existing_file(user_name ,game_name):

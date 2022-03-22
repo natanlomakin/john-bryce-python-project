@@ -40,12 +40,13 @@ to see the highest rating games enter 'rating'\n""")
         users_file_name = input('enter the name of the users file you want to open: ')
         users_list = user_functions.file(users_file_name)
         add_create_new = input("""to add a game to an existing user library enter "add", 
-to create a new library for an existing user enter "create" or to add a new user to the data base enter "new user":\n""")
+to create a new library for an existing user enter "create"
+to add a new user to the data base enter "new user":\n""")
         if add_create_new == 'create':
             user_name = input('enter the users name you would like to create a library for: ')
             user_id = input('enter the users id: ')
             game_name_list = []
-            game_name_list.append(input('enter the game name you want to add(enter done when finished): '))
+            game_name_list.append(input("enter the game name you want to add(enter 'done' when finished): "))
             while game_name_list[len(game_name_list)-1] != 'done':
                 game_name_list.append(input('enter the game name you want to add: '))
             game_name_list.remove('done')
@@ -54,7 +55,7 @@ to create a new library for an existing user enter "create" or to add a new user
         elif add_create_new == 'add':
             user_name = input('enter the users name you would like to add the games to: ')
             game_name_list = []
-            game_name_list.append(input('enter the game name you want to add(enter done when finished): '))
+            game_name_list.append(input("enter the game name you want to add(enter 'done' when finished): "))
             while game_name_list[len(game_name_list) - 1] != 'done':
                 game_name_list.append(input('enter the game name you want to add: '))
             game_name_list.remove('done')

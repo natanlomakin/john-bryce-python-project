@@ -253,11 +253,11 @@ def sort_by_release_date(list, up_down):
         day = 1
         while year <= 2022:
             for i in range(len(list)):
-                if int(list[i].get_realese_date_year()) == year:
+                if int(list[i].get_release_date_year()) == year:
                     while month <= 12:
-                        if int(list[i].get_realese_date_month()) == month:
+                        if int(list[i].get_release_date_month()) == month:
                             while day <= 30:
-                               if int(list[i].get_realese_date_day()) == day:
+                               if int(list[i].get_release_date_day()) == day:
                                    new_list.append(list[i])
                                    day = 31
                                    month = 13
@@ -280,11 +280,11 @@ def sort_by_release_date(list, up_down):
         day = 30
         while year >= 2000:
             for i in range(len(list)):
-                if int(list[i].get_realese_date_year()) == year:
+                if int(list[i].get_release_date_year()) == year:
                     while month >= 1:
-                        if int(list[i].get_realese_date_month()) == month:
+                        if int(list[i].get_release_date_month()) == month:
                             while day >= 1:
-                                if int(list[i].get_realese_date_day()) == day:
+                                if int(list[i].get_release_date_day()) == day:
                                     new_list.append(list[i])
                                     day = 0
                                     month = 0

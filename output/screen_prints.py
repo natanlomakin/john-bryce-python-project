@@ -54,6 +54,6 @@ def highest_rating_games(ls):
     """
 
     lst, rating = game_functions.highest_rating(ls)
+    print('highest rating games with a rating of', rating, 'are:\n')
     for i in lst:
-        print('highest rating games with a rating of',rating,'are:\n')
-        print(i)
+        print(i,'\n')
