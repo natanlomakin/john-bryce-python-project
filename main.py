@@ -1,4 +1,4 @@
-from functions import game_functions, user_functions
+from functions import game_functions, user_functions, file_relocation
 from output import screen_prints
 
 menu = input("""hi, what would you like to do?
@@ -50,6 +50,7 @@ to create a new library for an existing user enter "create" or to add a new user
                 game_name_list.append(input('enter the game name you want to add: '))
             game_name_list.remove('done')
             user_functions.generate_file_by_user(users_list ,user_name ,user_id, game_name_list)
+            file_relocation.user_library_file_relocation(user_name)
         elif add_create_new == 'add':
             user_name = input('enter the users name you would like to add the games to: ')
             game_name_list = []

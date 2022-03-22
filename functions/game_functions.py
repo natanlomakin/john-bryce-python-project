@@ -8,6 +8,7 @@ def open_file(file_name):
     :param file_name: name of the file to open
     :return: list of row number X
     """
+
     games_info_list = []
     games_file = open(file_name,)
     all = games_file.readlines()
@@ -24,6 +25,7 @@ def sort_by_genre(list, up_down):
     :param up_down: users arrangement choice (up for ascending, down for descending)
     :return: an arranged list of the games
     """
+
     new_list = []
     if up_down == 'up':
         letter = 97
@@ -55,6 +57,7 @@ def sort_by_name(list, up_down):
         :param up_down: users arrangement choice (up for ascending, down for descending)
         :return: an arranged list of the games
         """
+
     new_list = []
     if up_down == 'up':
         letter = 97
@@ -86,6 +89,7 @@ def sort_by_publisher(list, up_down):
         :param up_down: users arrangement choice (up for ascending, down for descending)
         :return: an arranged list of the games
         """
+
     new_list = []
     if up_down == 'up':
         letter = 97
@@ -117,6 +121,7 @@ def sort_by_developer(list, up_down):
         :param up_down: users arrangement choice (up for ascending, down for descending)
         :return: an arranged list of the games
         """
+
     new_list = []
     if up_down == 'up':
         letter = 97
@@ -148,6 +153,7 @@ def sort_by_platform(list, up_down):
         :param up_down: users arrangement choice (up for ascending, down for descending)
         :return: an arranged list of the games
         """
+
     new_list = []
     if up_down == 'up':
         letter = 97
@@ -179,6 +185,7 @@ def sort_by_price(list, up_down):
         :param up_down: users arrangement choice (up for ascending, down for descending)
         :return: an arranged list of the games
         """
+
     new_list = []
     if up_down == 'up':
         min_price = 0
@@ -208,6 +215,7 @@ def sort_by_rating(list, up_down):
         :param up_down: users arrangement choice (up for ascending, down for descending)
         :return: an arranged list of the games
         """
+
     new_list = []
     if up_down == 'up':
         min_rating = 0
@@ -237,6 +245,7 @@ def sort_by_release_date(list, up_down):
         :param up_down: users arrangement choice (up for ascending, down for descending)
         :return: an arranged list of the games
         """
+
     new_list = []
     if up_down == 'up':
         year = 2000
@@ -297,6 +306,11 @@ def sort_by_release_date(list, up_down):
     return new_list
 
 def most_common_genre(list):
+    """
+    this function gets a list of the available games and returns the most common genre
+    :param list: available games list
+    :return: most common genre
+    """
 
     genre_lst = []
     for i in range(len(list)):
@@ -310,6 +324,12 @@ def most_common_genre(list):
     return genre_lst[genre_lst_cnt.index(max(genre_lst_cnt))]
 
 def highest_rating(list):
+    """
+        this function gets a list of the available games and returns the highest rated games
+        :param list: available games list
+        :return: most common genre
+        """
+
     max_rating = 0
     highest_rating_ls = []
     for i in range(len(list)):
