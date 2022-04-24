@@ -35,7 +35,7 @@ def generate_file_by_user(users_list ,user_name ,user_id ,game_name_list):
              print an error message if exists
     """
 
-    destination = f'C:\\Users\\Natan\\PycharmProjects\\private_project\\user_librarys\\{user_name}.txt'
+    destination = os.getcwd() + f'\\user_librarys\\{user_name}.txt'
     user_exist = False
     if os.path.exists(destination):
         print('this user already has library')
@@ -68,9 +68,9 @@ def add_game_to_existing_file(user_name ,game_name):
     :return: adds the games to the user library
     """
 
-    path = f'C:\\Users\\Natan\\PycharmProjects\\private_project\\user_librarys\\{user_name}.txt'
+    path = os.getcwd() + f'\\user_librarys\\{user_name}.txt'
     if os.path.exists(path):
-        existing_file = open(f'C:\\Users\\Natan\\PycharmProjects\\private_project\\user_librarys\\{user_name}.txt', 'a')
+        existing_file = open(os.getcwd() + f'\\user_librarys\\{user_name}.txt', 'a')
         for i in game_name:
             existing_file.write(f'{i}\n')
         existing_file.close()

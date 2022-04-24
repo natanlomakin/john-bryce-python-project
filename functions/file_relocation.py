@@ -8,8 +8,8 @@ def user_library_file_relocation(user_name):
     :param user_name: user name
     :return: move users library to correct directory
     """
-    destination = f'C:\\Users\\Natan\\PycharmProjects\\private_project\\user_librarys\\{user_name}.txt'
-    source = f'C:\\Users\\Natan\\PycharmProjects\\private_project\\{user_name}.txt'
+    destination = os.getcwd() + f'\\user_librarys\\{user_name}.txt'
+    source = os.getcwd() + f'\\{user_name}.txt'
     if os.path.exists(source):
         os.replace(source, destination)
     else:

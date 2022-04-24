@@ -6,7 +6,7 @@ to see the games list enter 1
 to add a game to a users library enter 2
 to exit enter 3\n""")
 
-while menu == '1' or menu == '2':
+while menu != '3':
 
     if menu == '1':
 
@@ -37,13 +37,13 @@ to see the highest rating games enter 'rating'\n""")
 
 
     if menu == '2':
-        users_file_name = input('enter the name of the users file you want to open: ')
+        users_file_name = input("""enter the name of the users database you want to open (in these project its 'users.txt'): """)
         users_list = user_functions.file(users_file_name)
         add_create_new = input("""to add a game to an existing user library enter "add", 
 to create a new library for an existing user enter "create"
 to add a new user to the data base enter "new user":\n""")
         if add_create_new == 'create':
-            user_name = input('enter the users name you would like to create a library for: ')
+            user_name = input('enter the users name you would like to create a library for (must be an existing user from the users database): ')
             user_id = input('enter the users id: ')
             game_name_list = []
             game_name_list.append(input("enter the game name you want to add(enter 'done' when finished): "))
@@ -53,7 +53,7 @@ to add a new user to the data base enter "new user":\n""")
             user_functions.generate_file_by_user(users_list ,user_name ,user_id, game_name_list)
             file_relocation.user_library_file_relocation(user_name)
         elif add_create_new == 'add':
-            user_name = input('enter the users name you would like to add the games to: ')
+            user_name = input('enter the users name you would like to add the games to (must be an existing user from the users database): ')
             game_name_list = []
             game_name_list.append(input("enter the game name you want to add(enter 'done' when finished): "))
             while game_name_list[len(game_name_list) - 1] != 'done':
