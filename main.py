@@ -6,7 +6,7 @@ to see the games list enter 1
 to add a game to a users library enter 2
 to exit enter 3\n""")
 
-while menu != '3':
+while menu == '1' or menu == '2':
 
     if menu == '1':
 
